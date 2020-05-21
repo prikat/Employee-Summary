@@ -38,7 +38,7 @@ const managerQuestions = [
 
 const buildTeam = [
     {
-        type: "checkbox",
+        type: "rawlist",
         name: "choice",
         message: "Who is in your team?",
         choices: [
@@ -101,8 +101,8 @@ function init(){
         inquirer.prompt(managerQuestions).then((answers) => {
             const manager = new Manager(
                 answers.managerName,
-                answers.managerEmail,
                 answers.managerId,
+                answers.managerEmail,
                 answers.managerOffice
             );
             members.push(manager);
